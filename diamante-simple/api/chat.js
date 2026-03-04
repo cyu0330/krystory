@@ -6,11 +6,39 @@ export default async function handler(req, res) {
     const { message, mode, history } = req.body || {};
     if (!message) return res.status(400).json({ error: "Missing message" });
 
-    const system = buildSystemPrompt(mode);
+    const system =`You are the Krystory Crystal Assistant.
+
+                      Your role is to help users choose crystals based on their emotions or intentions.
+
+                      Rules:
+                      - Recommend 3 crystals maximum
+                      - Briefly explain why each crystal helps
+                      - Add one simple intention or affirmation
+                      - Keep answers short, calming, and friendly
+                      - Do not sound overly mystical or exaggerated
+                      - Keep responses under 120 words
+
+                      Example format:
+
+                      ✨ Recommended crystals:
+
+                      Rose Quartz  
+                      Supports love and emotional openness.
+
+                      Amethyst  
+                      Calms the mind and reduces anxiety.
+
+                      Moonstone  
+                      Encourages emotional balance.
+
+                      🌙 Intention:  
+                      "I allow calm and love to flow through me."
+                      `;
+
+
 
     const messages = [
-      { role: "system", content: system },
-      ...(Array.isArray(history) ? history : []).filter(Boolean),
+      { role: "system", content: "You are an assistant." },
       { role: "user", content: message },
     ];
 
