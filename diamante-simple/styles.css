@@ -1012,3 +1012,94 @@ h1, h2{
   color: rgba(44, 34, 72, .88) !important;
   text-shadow: 0 1px 0 rgba(255,255,255,.45);
 }
+
+
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.popup-box{
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  width:90%;
+  max-width:500px;
+  position:relative;
+}
+
+.popup-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  border:none;
+  background:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* Krystory chat (scoped) */
+#panelResult .chat-box {
+  margin-top: 12px;
+  height: 180px;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
+}
+
+#panelResult .chat-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#panelResult .chat-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  outline: none;
+}
+
+#panelResult .chat-send {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+}
+
+#panelResult .chat-msg {
+  display: flex;
+  margin: 8px 0;
+}
+
+#panelResult .chat-user {
+  justify-content: flex-end;
+}
+
+#panelResult .chat-assistant {
+  justify-content: flex-start;
+}
+
+#panelResult .chat-bubble {
+  max-width: 78%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  line-height: 1.35;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.85);
+}
+
+#panelResult .chat-user .chat-bubble {
+  background: rgba(0,0,0,0.04);
+}
